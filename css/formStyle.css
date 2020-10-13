@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+main div form .titleForm{
+    font-family: "Luckiest Guy";
+    font-style: normal;
+    font-variant: normal;
+    color: #ffcc00;
+}
+
+main div form label{
+    font-family: Verdana, Geneva, sans-serif;
+    color:#ffcc00;
+
+    font-size: 10px;
+}
+main div form #checkbox{
+    font-size: 15px;
+}
+main div form #str_ghost{
+    size: 10px;
+}
+
+main div form .fields input{
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: white;
+    border: 0px;
+    border-bottom: 2px solid #ffcc00;
+}
+
+main div form .buttonForm input{
+    font-family: "Luckiest Guy";
+    font-style: normal;
+    font-variant: normal;
+    background-color: #ffcc00;
+    color: white;
+    border: 0px;
+    font-size: 20px;
+}
+
+
+.forms{
+    max-width: 550px;
+    margin: 0 auto;
+    background:rgba(0,0,0,0.8);
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+}
+
+

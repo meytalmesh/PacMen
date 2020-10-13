@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- meta data-->
+	<meta charset="utf-8">
+	<meta name="author" content="Meytal&Yamin"/>
+	<title>M&Y PAC-MAN</title>
+	<link rel="shortcut icon" type="images/png" href="images/favicon.ico">
+
+	<!-- our .js files-->
+	<script type="text/javascript" src="js/app.js"></script>
+	<script src="js/dialog.js"></script>
+	<script src="js/register.js"></script>
+	<script src="js/welcome.js"></script>
+
+	<!-- jQuery source-->
+	<script src="./jquery-3.4.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+
+
+	<!-- Font Awesome icons-->
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Luckiest+Guy" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Bootstrap CSS!-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<!-- CSS File -->
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/formStyle.css"/>
+	<link rel="stylesheet" type="text/css" href="css/welcomeStyle.css"/>
+
+</head>
+
+
+<body>
+<menu id="menu">
+	<ul id="menuTitles">
+<!--		<li><img class="logo" id="logo" src="images/logo.png"></li>-->
+		<li><a class="but" id="menuWelcome" href="#">   Welcome   </a></li>
+		<li><a class="but" id="menuRegister" href="#">   Register   </a></li>
+		<li><a class="but" id="menuLogin" href="#">   Login   </a></li>
+		<li><a class="but" id="menuAbout" href="#" onclick="openAboutDialog()">   About   </a></li>
+		<li><a class="but" id="menuContact" href="#" onclick="openAboutDialog()">   Contact   </a></li>
+	</ul>
+</menu>
+
+<main role="main" class="container">
+	<content>
+
+
+		<div id="welcome" class="welcome" style="display: block">
+			<div>
+				<img class="image_wel" src="images/back.png">
+				<button class="button_wel" id="login_btn" type="button">Login</button><br>
+				<button class="button_wel" id="register_btn" type="button">Register</button>
+			</div>
+		</div>
+
+		<div id="register" style="display: none">
+			<form class="forms" id="register_form" autocomplete="off">
+				<h3 class="titleForm"><strong>Register</strong></h3><br>
+				<div class="fields" id="reg">
+					<label for="first_name">First Name</label><br>
+					<input name="first_name" id="first_name"  placeholder="First Name" type="text"><br>
+
+					<label for="last_name">Last Name</label><br>
+					<input name="last_name" id="last_name"  placeholder="Last Name" type="text"><br>
+
+					<label for="user_name">Username</label><br>
+					<input name="user_name" id="user_name"  placeholder="User Name" type="text"><br>
+
+					<label for="password">Password</label><br>
+					<input name="password" id="password" placeholder="Password" type="password"><br>
+
+					<label for="confirm_password">Confirm Password</label><br>
+					<input name="confirm_password" id="confirm_password" placeholder="Confirm Password" type="password"><br>
+
+					<label for="email">Email</label><br>
+					<input name="email" id="email" class="input"  placeholder="Email address" type="text"><br>
+
+					<label for="birthday">Birthday</label><br>
+					<input name="birthday" id="birthday"  placeholder="Birthday" type="date"><br>
+					<br>
+				</div>
+
+				<div class="buttonForm" id="buttonReg">
+					<input class="button_sub" id="submit_register"  type="submit" value="  Submit  ">
+				</div>
+
+			</form>
+		</div>
+
+		<div id="login" style="display: none">
+			<form class="forms" id="login_form" autocomplete="off">
+				<h2 class="titleForm"><strong>Login</strong></h2><br>
+				<div class="fields" id="log">
+					<input name="login_user_name" id="login_user_name" placeholder="User Name" type="text"><br><br>
+					<input name="login_password" id="login_password" placeholder="Password" type="password">
+				</div>
+				<br><br>
+				<div class="buttonForm" id="buttonLog">
+					<input class="button_sub" id="submit_login" type="submit" value="Sign In">
+					<br><br><br><br><br>
+				</div>
+			</form>
+		</div>
+
+		<div id="game" style="display: none">
+			<div id="load_gif" style="display: none">
+				<img src="images/load.gif" id="loading_gif">
+				<br><br><br><br><br>
+			</div>
+
+			<div id="settings" style="display: none">
+				<form class="forms" id="settings_form" autocomplete="off">
+					<h2 class="titleForm"><strong>Game Settings</strong></h2><br>
+					<div class="fields" id="set">
+						<label for="num_balls">Number of balls (50-90)</label><br>
+						<input name="num_balls" id="num_balls" placeholder="Number of balls" type="text"><br>
+
+						<label for="num_ghost">Number of ghosts (1-4)</label><br>
+						<input name="num_ghost" id="num_ghost" placeholder="Number of ghosts" type="text"><br>
+
+
+						<label for="time">Game time in seconds (Biger then 60)</label><br>
+						<input name="time" id="time" placeholder="Time in seconds" type="text"><br><br>
+					</div>
+
+					<h4>Move the Pac-Man using the arrow keys on the keyboard</h4>
+					<h4>If you want to change the keys- press the buttons below</h4>
+					<div><button class="button_arrow" style="font-size:24px" id="pre_up" type="button"><i class="fa fa-arrow-up"></i></button></div>
+					<div>
+						<button class="button_arrow" style="font-size:24px" id="pre_left" type="button"><i class="fa fa-arrow-left"></i></button>
+						<button class="button_arrow" style="font-size:24px" id="pre_down" type="button"><i class="fa fa-arrow-down"></i></button>
+						<button class="button_arrow" style="font-size:24px" id="pre_right" type="button"><i class="fa fa-arrow-right"></i></button>
+					</div>
+					<br>
+					<div id="change_key_div" style="display: none"><input id="change_key_input" placeholder="Click here and press a key." type="text"></div>
+					<h4>Choose the colors of balls: </h4>
+					<h4>*The colors below are recommended for a fun gaming experience :)</h4>
+					<br>
+					<h4>5 Points Ball COLOR: <input type="color" name="point_color_5" id="point_color_5" value="#ffffff"></h4>
+					<h4>15 Points Ball COLOR: <input type="color" name="point_color_15" id="point_color_15" value="#1900ff"></h4>
+					<h4>25 Points Ball COLOR: <input type="color" name="point_color_25" id="point_color_25" value="#e52929"></h4>
+					<br>
+					<div class="buttonForm" id="buttonSet">
+						<input class="button_sub" id="random" type="button" value="Random">
+						<input class="button_sub" id="startGame"  type="submit" value="Start!">
+					</div>
+				</form>
+			</div>
+
+			<div id="gameBoard" style="display: none" >
+					<div id="def">
+						<label class="brd" for="lblWelcome"><strong>WELCOME:</strong></label>
+						<input class="lbrd" id="lblWelcome" type="text" /><br>
+
+						<label class="brd"  id="score" for="lblScore"><strong>SCORE:</strong></label>
+						<input class="lbrd" id="lblScore" type="text" /><br>
+
+						<label  class="brd" id="timer" for="lblTime"><strong>TIME LEFT:</strong></label>
+						<input  class="lbrd" id="lblTime" type="text" /><br>
+
+						<label  class="brd" id="life" for="lblHeart">LIFE:</label>
+						<canvas id="lblHeart" style="width: 300px; height: 30px"></canvas><br>
+						<img id="heart" src="images/heart.png" style="display: none">
+
+						<p class="brd"><strong>Number of balls in the board:</strong><span id="numBa"></span><br>
+						5 Points Ball COLOR:  <span id="p5_ball">•</span><br>
+						15 Points Ball COLOR:  <span id="p15_ball">•</span><br>
+						25 Points Ball COLOR:  <span id="p25_ball">•</span></canvas><br>
+						</p>
+
+						<p id="brb"><strong>Game buttons</strong>:<br>
+							UP: <span id="upButt"></span><br>
+							DOWN: <span id="downButt"></span><br>
+							RIGHT: <span id="rightButt"></span><br>
+							LEFT: <span id="leftButt"></span><br>
+
+						</p>
+
+						<p class="brd"><strong>GIFT</strong>: <img src="images/gift.png" style="width: 20px; height: 20px" > add 50 points to your SCORE.</p>
+						<p class="brd"><strong>CLOCK:</strong> <img src="images/clock.png" style="width: 20px; height: 20px" > add 20 seconds for your TIME .</p>
+						<p class="brd"><strong>POISON CANDY:</strong> <img src="images/candy.png" style="width: 20px; height: 20px" > drops 20 points form your SCORE .</p>
+
+
+						<input class="button_game" id="new_Game" type="button" value="New Game">
+						<input class="button_game" id="set_settings" type="button" value="Settings">
+					</div>
+
+				<div id="gameCanvas" >
+					<canvas id="canvas" height="600" width="600"></canvas>
+					<img class="ghost" id="gh1" src="images/ghost1.png" style="display: none">
+					<img class="ghost" id="gh2" src="images/ghost2.png" style="display: none">
+					<img class="ghost" id="gh3" src="images/ghost3.png" style="display: none">
+					<img class="ghost" id="gh4" src="images/ghost4.png" style="display: none">
+					<img class="ghost" id="strong" src="images/strong.gif" style="display: none">
+					<img class="gift" id="gift" src="images/gift.png" style="display: none">
+					<img class="clock" id="clock" src="images/clock.png" style="display: none">
+					<img class="poisonCandy" id="poisonCandy" src="images/candy.png" style="display: none">
+				</div>
+
+				<br style="clear:both;"/>
+
+				<div id="gameOver" style="display: none">
+					<img  id="imgOver" src="images/gameover.png"><br>
+					<label class="brd"  id="_score" for="lbl_Score">YOUR SCORE IS:</label>
+					<input class="lbrd" id="lbl_Score" type="text" /><br><br>
+					<input class="button_over" id="newGame" type="button" value="Start New Game">
+					<input class="button_over" id="newSetting" type="button" value="Set Settings"><br><br>
+
+					<!--				<input class="button_sub" id="goWelcome"  type="submit" value="Welcome">-->
+				</div>
+				<div id="winner" style="display: none">
+					<img  id="imgWinner" src="images/winner.png"><br>
+					<label class="brd"  id="score3" for="lbl_Score2">YOUR SCORE IS:</label>
+					<input class="lbrd" id="lbl_Score2" type="text" /><br><br>
+					<input class="button_over" id="startAgain" type="button" value="Start New Game"><br><br><br>
+
+				</div>
+				<div id="gameOverTime" style="display: none">
+					<br><br><br>
+					<label class="brd"  id="score1" for="lbl_Score1">You are better than </label>
+					<input class="lbrd" id="lbl_Score1" type="text" />
+					<label class="brd"  id="score2" for="lbl_Score1"> points!</label><br><br>
+					<input class="button_over" id="startOver" type="button" value="Start New Game"><br>
+
+					<br><br><br><br><br><br><br><br><br><br><br>
+				</div>
+
+
+			</div>
+		</div>
+
+	</content>
+</main>
+
+<dialog id="about" class="dialog">
+	<div class="aboutContent">
+		<h3>About</h3>
+		<br>
+		<P>
+			Meytal and Yasmin project<br>
+			We used jQuery Plugin:<br>
+			● validate that check validtion in forms.<br>
+			● additional-methods that give us extra validtion function.<br>
+			We used grid template:<br>
+			● layouts of header, navigation, content and footer.<br>
+			The problems we had in this project are:<br>
+			● how use diffrent jQuery and combine them in the javascript.<br>
+			● find a quality and fast searching algorithm for the ghosts.<br>
+		</P>
+		<br>
+		<button id="closeAbout" class="close" >Close</button>
+	</div>
+</dialog>
+
+<dialog id="contact" class="dialog">
+	<div class="contactContent">
+		<img id="contactImage" src="images/contact.png">
+		<h3>Contact With Us!</h3>
+		<P>
+			Yasmin: <a href="mailto:yasminav@bgu.ac.il">yasminav@post.bgu.ac.il</a><br>
+			Meytal: <a href="mailto:meshumey@bgu.ac.il">meshumey@post.bgu.ac.il</a>
+		</P>
+		<button id="closeContact" class="close" >Close</button>
+	</div>
+</dialog>
+<footer>
+	Developed By Meytal Yaniv & Yasmin Avraham    © 2020
+</footer>
+<!--<downPage>-->
+<!--	Product By Meytal Yaniv & Yasmin Avraham    © 2020-->
+<!--</downPage>-->
+
+
+<!--		<div id="score">
+			<label for="lblScore">SCORE:</label>
+			<input id="lblScore" type="text" />
+		</div>
+		<div id="time">
+			<label for="lblTime">TIME:</label>
+			<input id="lblTime" type="text" />
+		</div>
+		<div id="game">
+			<canvas id="canvas" height="600" width="600"></canvas>
+		</div>-->
+
+</body>
+
+<script src="js/dialog.js"></script>
+<script src="js/register.js"></script>
+<script src="js/welcome.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/app.js"></script>
+<script src="js/sounds.js"></script>
+</html>
