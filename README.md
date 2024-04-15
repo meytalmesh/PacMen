@@ -11,6 +11,4 @@ Extra time- an icon of a clock that moves randomly on the game board and add 20 
 
 Sour candy- an icon of a yellow candy that placed at a random cell on the board and drops 20 points form the score.
 
-Meytal Yaniv: ID - 307938969  
-Email: meshumey@post.bgu.ac.il
 
